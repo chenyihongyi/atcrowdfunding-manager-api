@@ -1,8 +1,11 @@
 package com.atguigu.atcrowdfunding.manager.service;
 
+import com.atguigu.atcrowdfunding.bean.Role;
 import com.atguigu.atcrowdfunding.bean.User;
 import com.atguigu.atcrowdfunding.util.Page;
+import com.atguigu.atcrowfunding.vo.Data;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -25,4 +28,14 @@ public interface UserService {
     int deleteUser(Integer id);
 
     int deleteBatchUser(Integer[] ids);
+
+    int deleteBatchUserByVO(Data data);
+
+    List<Role> queryAllRole();
+
+    List<Integer> queryRoleByUserid(Integer id);
+
+    int saveUserRoleRelationship(Integer userid, Data data);
+
+    int deleteUserRoleRelationship(Integer userid, Data data);
 }
